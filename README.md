@@ -12,4 +12,7 @@ https://book.discovermeteor.com/
     - NOTE: a Meteor app however, can iterate over a cursor. so fetch is used when you explicitly would like the data in an array
 
 ## Feedback
-* ...
+* A minor misinterpretation of the text (Chapter 5, Routing). At first read, I thought the text implied a loading template was included.
+    - "Thankfully, Iron Router comes with a built-in way to delay showing a template until the route calling it is ready, and show a loading template instead:"
+    - upon further reading I realized you needed to assign/define the loading template
+    - perhaps the initial wording could be changed a little to avoid that implication
