@@ -16,3 +16,4 @@ https://book.discovermeteor.com/
     - "Thankfully, Iron Router comes with a built-in way to delay showing a template until the route calling it is ready, and show a loading template instead:"
     - upon further reading I realized you needed to assign/define the loading template
     - perhaps the initial wording could be changed a little to avoid that implication
+* Near commit 7-1 (submit post): helpful explanation is given for the event handler code, but I think it would have been helpful to explain the second parameter to Router.go as well (I went to the docs to look it up).
