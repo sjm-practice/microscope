@@ -16,7 +16,8 @@ Template.postSubmit.events({
                 alert('NOTE: this link has already been posted.');
             }
 
-            Router.go('postPage', { _id: result._id });
         });
+
+        Router.go('postsList');
     }
 });
