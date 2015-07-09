@@ -9,8 +9,9 @@
  * a server method.
  *
  * For further explanation/examples see:
- *      book.discovermeteor.com/chapter/editing-posts
+ *      https://book.discovermeteor.com/chapter/editing-posts
  *      (Method Calls vs Client-side Data Manipulation note section)
+ *      https://book.discovermeteor.com/chapter/allow-and-deny
  */
 Template.postEdit.events({
     'submit form': function (e) {
