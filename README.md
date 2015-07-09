@@ -20,4 +20,5 @@ https://book.discovermeteor.com/
 * Adding Security (commit 7-2)
     - I got slightly different behavior than described in the book. When trying to create a post with no user logged in, my browser showed my 404 not found page (not_found.html). The book states/shows a blank browser page (nav bar only, no body). My console did show the insert failed: access denied message
     - shouldn't/couldn't an exception be thrown in this case?
-* I don't see where css class .not-found and .access-denied are defined.
+* I don't see where css class .not-found and .access-denied are defined (in the source).
+    - the access-denied message is not displayed formatted
