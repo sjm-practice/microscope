@@ -26,7 +26,7 @@ Template.postEdit.events({
 
         Posts.update(currentPostId, { $set: postProperties }, function (error) {
             if (error) {
-                alert(error.reason);
+                throwError(error.reason);
             } else {
                 Router.go('postPage', { _id: currentPostId });
             }
@@ -40,7 +40,7 @@ Template.postEdit.events({
             var currentPostId = this._id;
             Posts.remove(currentPostId, function (error) {
                 if (error) {
-                    alert(error.reason);
+                    throwError(error.reason);
                 } else {
                     Router.go('postsList');
                 }
