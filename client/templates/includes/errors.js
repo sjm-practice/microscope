@@ -11,3 +11,4 @@ Template.error.onRendered(function () {
         Errors.remove(error._id);
     }, 3000);
 });
+
