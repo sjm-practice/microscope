@@ -1,6 +1,6 @@
 Errors = new Mongo.Collection(null);
 
 
-throwError  = function (message) {
+displayClientError  = function (message) {
     Errors.insert({ message: message });
 };
