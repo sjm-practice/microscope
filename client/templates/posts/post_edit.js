@@ -1,6 +1,19 @@
+Template.postEdit.onCreated(function () {
+    Session.set('postEditErrors', {});
+});
+
+Template.postEdit.helpers({
+    errorMessage: function (field) {
+        return Session.get('postEditErrors')[field];
+    },
+    errorClass: function (field) {
+        return !!Session.get('postEditErrors')[field] ? 'has-error' : '';
+    }
+});
+
 /**
  * For simple, straight forward edits such as the update and delete below, it
- * is okay practice to do the update and remove operations here, with the allow
+ * is okay practice to do the update and remove operations here, with the 'allow'
  * set up.
  *
  * When the database operations become more than simple, it is better practice
@@ -23,6 +36,11 @@ Template.postEdit.events({
             url: $(e.target).find('[name=url]').val(),
             title: $(e.target).find('[name=title]').val()
         };
+
+        var errors = validatePost(postProperties);
+        if (errors.title || errors.url) {
+            return Session.set('postEditErrors', errors);
+        }
 
         Posts.update(currentPostId, { $set: postProperties }, function (error) {
             if (error) {
