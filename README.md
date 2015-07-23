@@ -10,6 +10,11 @@ https://book.discovermeteor.com/
     - find returns a cursor (which is a reactive data source)
     - fetch transforms cursor in to an array
     - NOTE: a Meteor app however, can iterate over a cursor. so fetch is used when you explicitly would like the data in an array
+* Errors section (validatePost)
+    - notice that validatePost is called by client, and server method
+    - this prevents unvalidated posts from being entered by a client or server call
+    - although safe, this didn't seem very DRY to me
+        - my initial inclination would have been to call from server method only, but is a better user experience to call from client as well (immediate user feedback)
 
 ## Feedback
 * A minor misinterpretation of the text (Chapter 5, Routing). At first read, I thought the text implied a loading template was included.
