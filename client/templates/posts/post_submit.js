@@ -27,11 +27,11 @@ Template.postSubmit.events({
 
         Meteor.call('postInsert', post, function (error, result) {
             if (error) {
-                return displayClientError(error.reason);
+                return Errors.throw(error.reason);
             }
 
             if (result.postExists) {
-                displayClientError('NOTE: this link has already been posted.');
+                Errors.throw('NOTE: this link has already been posted.');
             }
 
             Router.go('postPage', { _id: result._id });
