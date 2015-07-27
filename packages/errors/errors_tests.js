@@ -7,7 +7,7 @@ Tinytest.add("Errors - collection", function (test) {
     Errors.collection.remove({});
 });
 
-Tinytest.addAsync("Errors - tmeplate", function (test, done) {
+Tinytest.addAsync("Errors - template", function (test, done) {
     Errors.throw('A new Error!');
     test.equal(Errors.collection.find({}).count(), 1);
 
