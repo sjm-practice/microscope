@@ -21,7 +21,7 @@ if (Posts.find().count() === 0) {
     var joeId = Accounts.createUser({
         username: 'joe',
         password: 'abc123',
-        profile: { name: 'joe' }
+        profile: { name: 'Joe' }
     });
     var joe = Meteor.users.findOne(joeId);
 
@@ -30,7 +30,8 @@ if (Posts.find().count() === 0) {
         userId: sacha._id,
         author: sacha.profile.name,
         url: 'http://sachagreif.com/introducing-telescope/',
-        submitted: new Date(now - 7 * 3600 * 1000)
+        submitted: new Date(now - 7 * 3600 * 1000),
+        commentsCount: 2
     });
 
     Comments.insert({
@@ -54,7 +55,8 @@ if (Posts.find().count() === 0) {
         userId: tom._id,
         author: tom.profile.name,
         url: 'http://meteor.com',
-        submitted: new Date(now - 10 * 3600 * 1000)
+        submitted: new Date(now - 10 * 3600 * 1000),
+        commentsCount: 0
     });
 
     Posts.insert({
@@ -62,7 +64,8 @@ if (Posts.find().count() === 0) {
         userId: tom._id,
         author: tom.profile.name,
         submitted: new Date(now - 12 * 3600 * 1000),
-        url: 'http://themeteorbook.com'
+        url: 'http://themeteorbook.com',
+        commentsCount: 0
     });
 
     Posts.insert({
@@ -70,7 +73,8 @@ if (Posts.find().count() === 0) {
         userId: joe._id,
         author: joe.profile.name,
         submitted: new Date(now - 14 * 3600 * 1000),
-        url: 'http://www.bikes.com'
+        url: 'http://www.bikes.com',
+        commentsCount: 0
     });
 
     Posts.insert({
@@ -78,6 +82,7 @@ if (Posts.find().count() === 0) {
         userId: steve._id,
         author: steve.profile.name,
         submitted: new Date(now - 9 * 3600 * 1000),
-        url: 'http://www.sailboat.com'
+        url: 'http://www.sailboat.com',
+        commentsCount: 0
     });
 }
