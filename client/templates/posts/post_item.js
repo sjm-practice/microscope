@@ -6,5 +6,10 @@ Template.postItem.helpers({
     },
     ownPost: function () {
         return this.userId === Meteor.userId();
+    },
+    showDiscussButton: function () {
+        // On this reusable template, only show the 'Discuss' button/link
+        // when on the posts list page.
+        return Router.current().route.getName() === 'postsList';
     }
 });
