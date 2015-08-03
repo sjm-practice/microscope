@@ -1,6 +1,6 @@
 <template name="postItem">
     <div class="post">
-        <a href="#" class="upvote btn btn-default">&#x2B06;</a>
+        <a href="#" class="upvote btn btn-default {{upvotedClass}}">&#x2B06;</a>
         <div class="post-content">
             {{votes}} Votes,
             <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>

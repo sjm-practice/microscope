@@ -11,11 +11,19 @@ Template.postItem.helpers({
         // On this reusable template, only show the 'Discuss' button/link
         // when on the posts list page.
         return Router.current().route.getName() === 'postsList';
+    },
+    upvotedClass: function () {
+        var userId = Meteor.userId();
+        if (userId && !_.include(this.upvoters, userId)) {
+            return 'btn-primary upvotable';
+        } else {
+            return 'disabled';
+        }
     }
 });
 
 Template.postItem.events({
-    'click .upvote': function (e) {
+    'click .upvotable': function (e) {
         e.preventDefault();
         Meteor.call('upvote', this._id);
     }
