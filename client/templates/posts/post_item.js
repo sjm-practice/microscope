@@ -13,3 +13,10 @@ Template.postItem.helpers({
         return Router.current().route.getName() === 'postsList';
     }
 });
+
+Template.postItem.events({
+    'click .upvote': function (e) {
+        e.preventDefault();
+        Meteor.call('upvote', this._id);
+    }
+});
