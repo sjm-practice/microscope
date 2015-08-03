@@ -31,6 +31,8 @@ if (Posts.find().count() === 0) {
         author: sacha.profile.name,
         url: 'http://sachagreif.com/introducing-telescope/',
         submitted: new Date(now - 7 * 3600 * 1000),
+        upvoters: [],
+        votes: 0,
         commentsCount: 2
     });
 
@@ -56,6 +58,8 @@ if (Posts.find().count() === 0) {
         author: tom.profile.name,
         url: 'http://meteor.com',
         submitted: new Date(now - 10 * 3600 * 1000),
+        upvoters: [],
+        votes: 0,
         commentsCount: 0
     });
 
@@ -63,8 +67,10 @@ if (Posts.find().count() === 0) {
         title: 'The Meteor Book',
         userId: tom._id,
         author: tom.profile.name,
-        submitted: new Date(now - 12 * 3600 * 1000),
         url: 'http://themeteorbook.com',
+        submitted: new Date(now - 12 * 3600 * 1000),
+        upvoters: [],
+        votes: 0,
         commentsCount: 0
     });
 
@@ -75,6 +81,8 @@ if (Posts.find().count() === 0) {
             userId: sacha._id,
             url: 'http:/google.com/?q=test-' + i,
             submitted: new Date(now - i * 3600 * 1000),
+            upvoters: [],
+            votes: 0,
             commentsCount: 0
         });
     }
@@ -83,8 +91,10 @@ if (Posts.find().count() === 0) {
         title: 'Bikes are fun.',
         userId: joe._id,
         author: joe.profile.name,
-        submitted: new Date(now - 14 * 3600 * 1000),
         url: 'http://www.bikes.com',
+        submitted: new Date(now - 14 * 3600 * 1000),
+        upvoters: [],
+        votes: 0,
         commentsCount: 0
     });
 
@@ -92,8 +102,10 @@ if (Posts.find().count() === 0) {
         title: 'Go sailing.',
         userId: steve._id,
         author: steve.profile.name,
-        submitted: new Date(now - 9 * 3600 * 1000),
         url: 'http://www.sailboat.com',
+        submitted: new Date(now - 9 * 3600 * 1000),
+        upvoters: [],
+        votes: 0,
         commentsCount: 0
     });
 }
