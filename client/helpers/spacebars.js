@@ -1,7 +1,7 @@
-Template.registerHelper('pluralize', function (n, thing) {
-    if (n === 1) {
-        return '1 ' + thing;
+Template.registerHelper('pluralize', function (qty, baseWord) {
+    if (qty === 1) {
+        return '1 ' + baseWord;
     } else {
-        return n + ' ' + thing + 's';
+        return qty + ' ' + baseWord + 's';
     }
 });
