@@ -9,8 +9,8 @@ Template.postItem.helpers({
     },
     showDiscussButton: function () {
         // On this reusable template, only show the 'Discuss' button/link
-        // when on the posts list page.
-        return Router.current().route.getName() === 'postsList';
+        // when on the 'home' 'new' 'best' post pages.
+        return _.contains(['home', 'bestPosts', 'newPosts'], Router.current().route.getName());
     },
     upvotedClass: function () {
         var userId = Meteor.userId();
