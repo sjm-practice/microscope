@@ -7,3 +7,5 @@
 *.ico
 
 .npm/
+
+settings.json
