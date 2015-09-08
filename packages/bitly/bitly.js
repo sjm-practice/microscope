@@ -36,7 +36,7 @@ Bitly.getClicks = function (link) {
             timeout: 5000,
             params: {
                 'format': 'json',
-                'acces_token': Meteor.settings.bitly,
+                'access_token': Meteor.settings.bitly,
                 'link': link
             }
         }
@@ -44,6 +44,8 @@ Bitly.getClicks = function (link) {
 
     if (statsResponse.data.status_code === 200) {
         return statsResponse.data.data.link_clicks;
+    } else {
+        console.log('Bitly.getClicks non 200 response code.');
     }
 };
 
