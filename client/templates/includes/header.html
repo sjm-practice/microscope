@@ -17,6 +17,9 @@
                 <li class="{{activeClassForRoute 'bestPosts'}}">
                     <a href="{{pathFor 'bestPosts'}}">Best</a>
                 </li>
+                <li class="{{activeClassForRoute 'clickedPosts'}}">
+                    <a href="{{pathFor 'clickedPosts'}}">Most Clicked</a>
+                </li>
                 {{#if currentUser}}
                     <li class="{{activeClassForRoute 'postSubmit'}}">
                         <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
