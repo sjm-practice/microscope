@@ -11,20 +11,6 @@ if (Posts.find().count() === 0) {
     });
     var sacha = Meteor.users.findOne(sachaId);
 
-    var steveId = Accounts.createUser({
-        username: 'steve',
-        password: 'abc123',
-        profile: { name: 'Steve' }
-    });
-    var steve = Meteor.users.findOne(steveId);
-
-    var joeId = Accounts.createUser({
-        username: 'joe',
-        password: 'abc123',
-        profile: { name: 'Joe' }
-    });
-    var joe = Meteor.users.findOne(joeId);
-
     var telescopeId = Posts.insert({
         title: 'Introducing Telescope',
         userId: sacha._id,
@@ -87,25 +73,4 @@ if (Posts.find().count() === 0) {
         });
     }
 
-    Posts.insert({
-        title: 'Bikes are fun.',
-        userId: joe._id,
-        author: joe.profile.name,
-        url: 'http://www.bikes.com',
-        submitted: new Date(now - 14 * 3600 * 1000),
-        upVoters: [],
-        votes: 0,
-        commentsCount: 0
-    });
-
-    Posts.insert({
-        title: 'Go sailing.',
-        userId: steve._id,
-        author: steve.profile.name,
-        url: 'http://www.sailboat.com',
-        submitted: new Date(now - 9 * 3600 * 1000),
-        upVoters: [],
-        votes: 0,
-        commentsCount: 0
-    });
 }

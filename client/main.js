@@ -1,9 +1,12 @@
-window.intercomSettings = {
-    app_id: 'gncvnsqc',
-    // TODO: set current logged in user's full name
-    name: 'Test Name',
-    // TODO: set current logged in user's email address
-    email: 'test.name@example.com',
-    // TODO: set current logged in user's sign-up date
-    created_at: 1312182000      // unix timestamp sign-up date
-};
+Tracker.autorun(function () {
+    if (Meteor.user() && !Meteor.loggingIn()) {
+        var intercomSettings = {
+            app_id: 'gncvnsqc',
+            name: Meteor.user().username,
+            email: Meteor.user().emails[0].address,
+            created_at: Math.round(Meteor.user().createdAt/1000), // div by 1000 to convert from mongo time to unix time
+            favorite_color: _.sample(['blue', 'red', 'green', 'yellow'])    // practice using a custom field with intercom
+        };
+        Intercom('boot', intercomSettings);
+    }
+});
