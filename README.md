@@ -27,3 +27,4 @@ https://book.discovermeteor.com/
     - shouldn't/couldn't an exception be thrown in this case?
 * I don't see where css class .not-found and .access-denied are defined (in the source).
     - the access-denied message is not displayed formatted
+* Subsequent feedback notes were submitted to authors via disqus
